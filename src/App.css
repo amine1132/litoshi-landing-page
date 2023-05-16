@@ -512,6 +512,7 @@ text-align: start;
 display: flex;
 width: 100%;
 justify-content: space-around;
+margin-top: 220px;
 }
 .vertical-line {
   width: 6px;
