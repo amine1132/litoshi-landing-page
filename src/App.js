@@ -21,10 +21,20 @@ import Group34054 from './img/Group34054.svg'
 import Frame427319940 from './img/Frame427319940.svg'
 import Frame427 from './img/Frame427.svg'
 import './App.css';
+import Group50 from './img/Group50.svg'
+import Roadmap from './img/Roadmap.svg'
+import Frame from './img/Frame.svg'
+import Logo from './img/Logo.svg'
+
 
 function App() {
   return (
     <div className='max'>
+      <div className='max2'>
+        <div className='nav'>
+          <img src={Logo} alt="" className='logo'/>
+          <button type="button">Sign up</button>
+        </div>
       <div className='placementorigin'>
       <div className="bloctext1">
         <p className='agree'>Aggregator</p>
@@ -34,21 +44,14 @@ function App() {
         <button type="button">Get started</button>
       </div>
         <div className='marketcap2'>
-          <div className='textv5'>
-          <p>Market Cap</p>
-          <p>$145,578,327</p>
-          <img src={Group34054} alt=""/>
-          </div>
-      <div className='graphv2'>
-          <img src={Frame427319940} alt=""/>
-      </div>
+          <img src={Group50} alt=""/>
       </div>
       </div>
       <div className='placement3'>
       <div className="bloctext2">
         <p className='market'>Market <span>Data</span></p>
         <div className='soustexte1'>
-        <p>For a complete management of your assets, it is essential to have the market data inherent to them at hand. 
+        <p className='soustexte'>For a complete management of your assets, it is essential to have the market data inherent to them at hand. 
         For this purpose Litoshi calls upon the pioneers of these markets to optimize the accuracy of the data.</p>
         </div>
       </div>
@@ -106,18 +109,18 @@ function App() {
         <div className="text3">
           <div className="iconehand"><TbHandFinger strokeWidth={0.5}/></div>
           <span>Ease of use</span>
-          <p>Litoshi has been designed with users in mind. From any devices, you can easily manage your crypto 
+          <p className='soustexte'>Litoshi has been designed with users in mind. From any devices, you can easily manage your crypto 
           and perform transactions effortlessly.</p>
         </div>
         <div className="text4">
-          <div className="iconedash"><MdOutlineDashboardCustomize strokeWidth={0.1}/></div>
+          <div className="iconedash"><img src={Frame} alt=""/></div>
           <span>One app, unlimited opportunities</span>
-          <p>Track, trade, transfer, customize in one place. As long as the users ask us for new tools we will provide their needs.</p>
+          <p className='soustexte'>Track, trade, transfer, customize in one place. As long as the users ask us for new tools we will provide their needs.</p>
         </div>
         <div className="text5">
           <div className="iconeshield"><TbShield strokeWidth={0.5} /></div>
           <span>Open source</span>
-          <p>Transparency is the one the core foundation of our ecosystem. Being open source is inevitable for all of us building here.</p>
+          <p className='soustexte'>Transparency is the one the core foundation of our ecosystem. Being open source is inevitable for all of us building here.</p>
         </div>
         </div>
       </div>
@@ -128,7 +131,7 @@ function App() {
           <p className='soustextev1'>Our mission is to enable our users to navigate through this torrent of financial data more intuitively. We want to save your time.</p>
           </div>
           <img src={v09} alt="" className="madame" />
-        <button>Get started</button>
+        <button className='button2'>Get started</button>
         </div>
       </div>
       <div className="bloctext4">
@@ -140,49 +143,25 @@ function App() {
           <div className="icone1">
             <p>01</p>
           </div>
-          <p>5 minutes before public team & partners will mint a maximum of 10%. After this 5 minutes public launch start.</p>
+          <p className='soustexte'>5 minutes before public team & partners will mint a maximum of 10%. After this 5 minutes public launch start.</p>
         </div>
         <div className="textv2">
           <div className="icone2">
             <p>02</p>
           </div>
-          <p>Public launch will be announced on Discord first, then on Twitter.</p>
+          <p className='soustexte'>Public launch will be announced on Discord first, then on Twitter.</p>
         </div>
         <div className="textv3">
           <div className="icone3">
             <p>03</p>
           </div>
-          <p>Airdrop. Tokens minted by the partners & team will be used for airdrop to the community and investment for Litoshi.</p>
+          <p className='soustexte'>Airdrop. Tokens minted by the partners & team will be used for airdrop to the community and investment for Litoshi.</p>
         </div>
         </div>
       </div>
       <p className="title">Roadmap</p>
       <div className="container">
-        <div className="content content-left">
-          <div className='aligne'>
-          <p className='stage'>NFT FOR HOLE</p>
-          <p className='contentgris'>Aggregate NFT on Bitcoin & Litecoin</p>
-          </div>
-        <div className="additional-content">
-          <p className='stage'>REDACTED</p>
-          <p className='contentgris'>Redacted</p>
-        </div>
-      </div>
-      <div className="vertical-line">
-        <div className='rond'></div>
-        <div className='rond'></div>
-        <div className='rond'></div>
-        <div className='rond'></div>
-      </div>
-      <div className="content content-right">
-        <div className='aligne'>
-        <p className='stage'>TOKENHOLE</p>
-        <p className='contentgris'>Aggregate BRC20 & LTC20</p>
-        </div>
-      <div class="additional-content">
-        <p className='stage'>MOBHOLE</p>
-        <p className='contentgris'>Mobile app</p>
-      </div>
+        <img src={Roadmap} alt="" className='roadmap'/>
       </div>
     </div>
 
