@@ -25,7 +25,7 @@ import Group50 from './img/Group50.svg'
 import Roadmap from './img/Roadmap.svg'
 import Frame from './img/Frame.svg'
 import Logo from './img/Logo.svg'
-
+import InfiniteScrollBand from './InfiniteScrollBand'
 
 function App() {
   return (

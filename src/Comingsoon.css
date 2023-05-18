@@ -1,0 +1,329 @@
+.max{
+    max-width: 1920px;
+    width: 100%;
+  }
+  
+  body {
+    background-color: #151516;
+    color: #f5f5f5;
+    overflow: hidden;
+  }
+  
+  span {
+    color: #6473FE;
+  }
+  
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  .style h1,p{
+ margin: 0;
+  }
+  .style h1{
+ font-size: 24px;
+  }
+  .top p{
+  color: white;
+  }
+  
+  .colone {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  height: 100%;
+  }
+
+  html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+  .idk {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .box1 {
+    background: linear-gradient(342.29deg, rgba(100, 115, 254, 0.35) 0%, rgba(128, 128, 128, 0.0735) 100%);
+    width: 60%;
+    height: 267px;
+    margin-right: 24px;
+    border-radius: 10px;
+  }
+  .box1 p{
+  font-size: 16px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+  .box1 h1{
+    margin: 0;
+    margin-left: 20px;
+    font-size: 24px;
+  }
+  
+  .box2 {
+    background: linear-gradient(342.29deg, rgba(100, 115, 254, 0.35) 0%, rgba(128, 128, 128, 0.0735) 100%);
+    width: 70%;
+    height: 267px;
+    border-radius: 10px;
+  }
+  .box2 p{
+  margin-left: 20px;
+  font-size: 14px;
+  }
+  .groupe1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .groupe2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    width: 100%;
+  }
+  
+  .box3 {
+    background: rgba(100, 115, 254, 0.12);
+    backdrop-filter: blur(30px);
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+  }
+  
+  .topline {
+    border-bottom: 1px solid #f5f5f5;
+    width: 60%;
+    margin-left: 40px;
+  }
+  
+  .topline li {
+    font-size: 14px;
+    color: #f5f5f5;
+  }
+  
+  .topline ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  
+  .select1 {
+    background-color: #1E1E1E;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .select2 {
+    background-color: #1E1E1E;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  
+  
+  .gauche {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(100, 115, 254, 0.1) 100%);
+    border-radius: 10px;
+    margin-right: 52px;
+    width: 150px;
+    display: flex;
+    padding-top: 24px;
+  }
+  
+  .chain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .chain p{
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  }
+  .gauche {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 16px 16px 0;
+    margin-right: 52px;
+    width: 200px;
+    height: 97vh; /* ajuster la hauteur de la div à la hauteur de la fenêtre */
+   /* fixer la div pour qu'elle reste visible lors du défilement
+    */
+    border:1px solid #6473FE;
+  }
+  .menu{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 250px;
+  }
+  .menu button{
+  padding: 0px;
+  margin-bottom: 5px;
+  color: white;
+  font-size: 14px;
+  height: 20px;
+  }
+  .dashboard{
+    background: transparent;
+    width: 80%;
+    border: none;
+  }
+  .watchlist{
+    background: transparent;
+    width: 80%;
+    border: none;
+  }
+  .alerts{
+    background: transparent;
+    width: 80%;
+    border: none;
+  }
+  .multicharts{
+    background: transparent;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    width: 80%;
+  }
+  .menu i{
+  margin-right: 15px;
+  }
+  .navigation{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  }
+  .navigation button{
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 0;
+  height: 31px;
+  }
+ .red{
+  background:red;
+  width: 90%;
+  }
+  .bleu{
+  background: blue;
+  width: 90%;
+  }
+  .jaune{
+  background: yellow;
+  width: 90%;
+  }
+  .menufooter{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  }
+  .menufooter button{
+  background: rgba(255,255,255,0);
+  border: none;
+  margin-bottom: 10px;
+  padding: 0;
+  height: 30px;
+  color: white;
+  }
+  
+  .menufooter i{
+    margin-right: 20px;
+  }
+  .gauche button:hover{
+  background: linear-gradient(298.61deg, #6473FE -36.35%, rgba(100, 115, 254, 0) 134.43%);
+  }
+  .formulaire{
+  background-color:#151516 ;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 0;
+  border-radius: 0 5px 5px 0;
+  height: 31px;
+  width: 250px;
+  color: white;
+  }
+  .formulaire::placeholder{
+  color: #6473FE;
+  }
+  .loupe{
+  display: flex;
+  background-color:#151516 ;
+  border-bottom: 1px solid black;
+  border-top:1px solid black;
+  border-left:1px solid black;
+  width: 30px;
+  border-radius: 10px 0px 0px 10px;
+  align-items: center;
+  justify-content: center;
+  }
+  .notif{
+    position: absolute;
+    width: 1366.43px;
+    height: 308.72px;
+    left: 368.3px;
+    top: 850.63px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #563AFF 0%, rgba(217, 217, 217, 0) 100%);
+    filter: blur(50px);
+    transform: matrix(1, -0.07, -0.07, -1, 0, 0);
+  }
+  .input{
+  display: flex;
+  margin-right: 20px;
+  }
+  .gauche h1{
+  font-size: 14px;
+  }
+  
+  
+  
+  .ellipse{
+  box-sizing: border-box;
+  position: absolute;
+  width: 1366.43px;
+  height: 308.72px;
+  left: -428.7px;
+  top: -256px;
+  background: radial-gradient(50% 50% at 50% 50%, #563AFF 0%, rgba(217, 217, 217, 0) 100%);
+  border: 1px solid #000000;
+  filter: blur(50px);
+  transform: rotate(4.14deg);
+  }
+  
+  .button1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  background: linear-gradient(342.29deg, rgba(100, 115, 254, 0.35) 0%, rgba(128, 128, 128, 0.0735) 100%);
+  border-radius: 23.4286px;
+  width: 70%;
+  }
+  .button1 button{
+  margin: 8px;
+  }
+  
