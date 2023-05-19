@@ -25,7 +25,7 @@ import Group50 from './img/Group50.svg'
 import Roadmap from './img/Roadmap.svg'
 import Frame from './img/Frame.svg'
 import Logo from './img/Logo.svg'
-import InfiniteScrollBand from './InfiniteScrollBand'
+import DataDisplay from './bandeaudefilant';
 
 function App() {
   return (
@@ -33,7 +33,8 @@ function App() {
       <div className='max2'>
         <div className='nav'>
           <img src={Logo} alt="" className='logo'/>
-          <button type="button">Sign up</button>
+          <DataDisplay/>
+          <button type="button">DAPP</button>
         </div>
       <div className='placementorigin'>
       <div className="bloctext1">

@@ -1,0 +1,51 @@
+.defilante li{
+    /* Styles de votre bandeau */
+    width:250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .defilante ul{
+display: flex;
+flex-direction: row;
+width:calc(350px * 24);
+  }
+  
+  @keyframes translateinfinite {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+.defilante{
+overflow: hidden;
+background: black;
+max-width: 700px;
+}
+.slide{
+animation: 16s translateinfinite linear infinite ;
+}
+
+.defilante span{
+display: flex;
+flex-wrap: wrap;
+width: 90px;
+align-items: center;
+}
+.defilante .titre{
+color: #ff7733;
+font-weight: 600;
+font-size: 20px;
+text-align: end;
+display: flex;
+align-items: center;
+text-transform: uppercase;
+text-shadow:0 0 800px #ff7733,
+            0 0 700px #ff7733,
+            0 0 700px #ff7733,
+            0 0 10px #ff7733,
+            0 0 200px #ff7733;
+}
