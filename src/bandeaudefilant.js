@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Data from './data.json';
 import './bandeaudefilant.css'
-import Slider from "react-slick";
 import axios from 'axios';
 
 const DataDisplay = () => {
@@ -20,8 +18,8 @@ const DataDisplay = () => {
       fetchData();
     }, []);
   
-    // Tri et extraction du top 10 des objets avec les prix les plus élevés
-    const sortedData = data.sort((a, b) => b.prix - a.prix);
+    // Tri et extraction du top 10 des tokens avec les plus grosses valos
+    const sortedData = data.sort((a, b) => b.marketCap - a.marketCap);
     const top10Data = sortedData.slice(0, 10);
     console.log(top10Data);
   
