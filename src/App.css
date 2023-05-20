@@ -645,7 +645,7 @@ height: 40px;
 background-color: transparent;
 border-radius: 7px;
 border: 1px solid rgba(255, 255, 255, 0.3);
-font-size: 20px;
+font-size: 15px;
 color:white;
 display: flex;
 align-items: center;
@@ -677,6 +677,18 @@ max-width:551px;
   position: relative;
   left: 200px;
   }
+
+.iconedash{
+margin-bottom: 48px;
+}
+
+.iconehand{
+margin-bottom: 48px;
+}
+
+.iconeshield{
+margin-bottom: 48px;
+}
 .marketcap{
 width: 300px;
 height: 300px;
@@ -720,10 +732,14 @@ width: 80%;
 align-items: start;
 margin-left: 120px;
 }
+.titre2 span{
+font-size: 64px;
+}
 .titre6{
 display: flex;
 flex-direction: column;
 margin-left: 120px;
+font-size: 64px;
 }
 .bloctext3{
 align-items: start;
@@ -775,7 +791,8 @@ text-align: start;
 display: flex;
 align-items: start;
 margin-left: 120px;
-max-width: 500px;
+max-width: 700px;
+font-size: 64px;
 }
 .bloctext4{
 align-items: start;
