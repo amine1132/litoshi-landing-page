@@ -1,10 +1,47 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './Dashboard.css';
-import React from 'react';
 import litoshi from './litoshi.svg'
 import cercle from './Cercle.svg'
+import { json } from 'react-router-dom';
+
+const address = 'bc1p6ed8wca5sjmzvsf92uc2ak2egphj9zw59dghcup2ve95slpvcxlqynsk7j';
 
 function Dashboard() {
+  const [data, setData] = useState([]);
+  const [overall_balance, setOverallBalance] = useState(0);
+  const [available_balance, setAvailableBalance] = useState(0);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://brc20api.bestinslot.xyz/v1/get_brc20_balance/'+address); 
+      const jsonData = response.data;
+      setData(jsonData);
+      calculateSums(jsonData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const calculateSums = (data) => {
+    let overallSum = 0;
+    let availableSum = 0;
+
+    data.forEach((item) => {
+      overallSum += parseInt(item.overall_balance, 10);
+      availableSum += parseInt(item.available_balance, 10);
+    });
+
+    setOverallBalance(Number(overallSum));
+    setAvailableBalance(Number(availableSum));
+  };
+
+
   return (
     <>
     <div className="max">
@@ -30,16 +67,16 @@ function Dashboard() {
               <div className='groupv1'>
                 <div className='group1'>
                 <p>My Wallet</p>
-                <h1>Total:$ 66,898</h1>
+                <h1>Total: ${overall_balance.toLocaleString()}</h1>
                 </div>
                 <div className='group2'>
                   <p>Available</p>
-                  <p>$61,898</p>
+                  <p>${available_balance.toLocaleString()}</p>
                   {/*données du montant du produit*/}
                 </div>
                 <div className='group3'>
                   <p>Transferable</p>
-                  <p>$5000</p>
+                  <p>${(overall_balance-available_balance).toLocaleString()}</p>
                   {/*données du montant du produit*/}
                 </div>
               </div>
@@ -72,42 +109,11 @@ function Dashboard() {
                     <li>Supply</li>
                 </ul>
                 </div>
-                <ul className=''>
-                  <li>ORDI</li>
-                  <li>Positions</li>
-                  <li>Price</li>
-                  <li>24h</li>
-                  <li>Volume 24h</li>
-                  <li>Marketcap</li>
-                  <li>Supply</li>
-                </ul>
-                <ul>
-                  <li>PEPE</li>
-                  <li>Positions</li>
-                  <li>Price</li>
-                  <li>24h</li>
-                  <li>Volume 24h</li>
-                  <li>Marketcap</li>
-                  <li>Supply</li>
-                </ul>   
-                <ul>
-                  <li>PIZA</li>
-                  <li>Positions</li>
-                  <li>Price</li>
-                  <li>24h</li>
-                  <li>Volume 24h</li>
-                  <li>Marketcap</li>
-                  <li>Supply</li>
-                </ul>
-                <ul>
-                  <li>NALS</li>
-                  <li>Positions</li>
-                  <li>Price</li>
-                  <li>24h</li>
-                  <li>Volume 24h</li>
-                  <li>Marketcap</li>
-                  <li>Supply</li>
-                </ul>               
+                <div>
+                  {data.map(token => (
+                    <TickComponent tick={token.tick} />
+                  ))}
+                </div>
               </nav>
             </div>
           </div>
@@ -141,6 +147,40 @@ function Dashboard() {
       </div>
     </div>
   </>
+  );
+}
+
+function TickComponent({ tick }) {
+  const [tickData, setTickData] = useState(null);
+
+  useEffect(() => {
+    fetchTickData();
+  }, []);
+
+  const fetchTickData = async () => {
+    try {
+      const response = await axios.get(`https://brc20api.bestinslot.xyz/v1/get_brc20_ticker/${tick}`); // Remplacez l'URL par l'URL réelle de l'API pour récupérer les caractéristiques du tick
+      const tickData = response.data.ticker[0];
+      setTickData(tickData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  if (!tickData) {
+    return <div>Loading tick data...</div>;
+  }
+
+  return (
+    <ul>
+      <li>{tickData.tick.toUpperCase()}</li>
+      <li>Positions</li>
+      <li>Price</li>
+      <li>Change 24h</li>
+      <li>Volume 24h</li>
+      <li>Marketcap</li>
+      <li>{Number(tickData.max_supply).toLocaleString()}</li>
+    </ul>
   );
 }
 
