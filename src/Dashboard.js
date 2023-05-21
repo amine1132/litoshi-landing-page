@@ -4,7 +4,7 @@ import React from 'react';
 import litoshi from './litoshi.svg'
 import cercle from './Cercle.svg'
 
-function App() {
+function Dashboard() {
   return (
     <>
     <div className="max">
@@ -144,4 +144,4 @@ function App() {
   );
 }
 
-export default App;
+export default Dashboard;

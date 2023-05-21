@@ -26,11 +26,14 @@ import Roadmap from './img/Roadmap.svg'
 import Frame from './img/Frame.svg'
 import Logo from './img/Logo.svg'
 import DataDisplay from './bandeaudefilant';
+import Dashboard from './Dashboard';
+import { BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 
 
 
 function App() {
   return (
+    <Router>
     <div className='max'>
       <div className='max2'>
         <div className='nav'>
@@ -182,7 +185,11 @@ function App() {
           <p>Made by Litoshi Team @Copyright 2023</p>
         </div>
       </footer>
+      <Routes>
+         <Route path="/" element={<Dashboard />} />
+      </Routes>
     </div>
+    </Router> 
   );
 }
 export default App;
