@@ -1,6 +1,6 @@
 .defilante li{
     /* Styles de votre bandeau */
-    width:250px;
+    max-width:195px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,7 +8,8 @@
   .defilante ul{
 display: flex;
 flex-direction: row;
-width:calc(350px * 24);
+width:calc(180px * 24);
+justify-content: flex-end;
   }
   
   @keyframes translateinfinite {
@@ -24,6 +25,7 @@ width:calc(350px * 24);
 overflow: hidden;
 background: black;
 max-width: 700px;
+white-space: nowrap;
 }
 .slide{
 animation: 16s translateinfinite linear infinite ;
@@ -31,8 +33,7 @@ animation: 16s translateinfinite linear infinite ;
 
 .defilante span{
 display: flex;
-flex-wrap: wrap;
-width: 90px;
+width: 88px;
 align-items: center;
 }
 .defilante .titre{
@@ -48,4 +49,24 @@ text-shadow:0 0 800px #ff7733,
             0 0 700px #ff7733,
             0 0 10px #ff7733,
             0 0 200px #ff7733;
+}
+.red {
+  color: red;
+}
+
+.green {
+  color: #4EEE16;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  margin-left: 5px; /* Ajustez la valeur selon vos besoins */
+  width: 200px;
+}
+.arrow-down{
+  margin: 0;
+}
+.arrow-up{
+margin: 0;
 }

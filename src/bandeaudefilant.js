@@ -35,7 +35,33 @@ const DataDisplay = () => {
             <span className='titre'>${item.tick}</span>
             <ItemDetails tick={item.tick} marketcap={item.marketcap*Math.pow(10, -8)*price} />
             ${Math.floor(item.marketcap*Math.pow(10, -8)*price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-             ~~~~ {parseFloat(item.change_24h).toFixed(2)}%
+            <span className={parseFloat(item.change_24h).toFixed(2) < 0 ? 'red' : 'green'}>
+            <span className="arrow">
+            <p className="percentage">{Math.abs(parseFloat(item.change_24h)).toFixed(2)}%</p>
+            {parseFloat(item.change_24h).toFixed(2) < 0 ? (
+            <p className="arrow-down">&#9660;</p>
+            ) : (
+            <p className="arrow-up">&#9650;</p>
+              )}
+            </span>
+            </span>
+          </li>
+        ))}
+        {data.map((item, index) => (
+          <li key={index}>
+            <span className='titre'>${item.tick}</span>
+            <ItemDetails tick={item.tick} marketcap={item.marketcap*Math.pow(10, -8)*price} />
+            ${Math.floor(item.marketcap*Math.pow(10, -8)*price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            <span className={parseFloat(item.change_24h).toFixed(2) < 0 ? 'red' : 'green'}>
+            <span className="arrow">
+            <p className="percentage">{Math.abs(parseFloat(item.change_24h)).toFixed(2)}%</p>
+            {parseFloat(item.change_24h).toFixed(2) < 0 ? (
+            <p className="arrow-down">&#9660;</p>
+            ) : (
+            <p className="arrow-up">&#9650;</p>
+              )}
+            </span>
+            </span>
           </li>
         ))}
       </ul>
@@ -48,7 +74,7 @@ const ItemDetails = ({ tick, marketcap }) => {
 
   useEffect(() => {
     // Effectuer la requête pour obtenir les informations détaillées du token
-    axios.get(`https://brc20api.bestinslot.xyz/v1/get_brc20_ticker/${tick}`)
+    axios.get(`https://brc20api.bestinslot.xyz/v1/get_brc20_ticker/${tick}`)  
       .then(response => {
         const maxSupplyValue = parseInt(response.data.ticker[0].max_supply, 10);
         setPrice(marketcap/maxSupplyValue);
