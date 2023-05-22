@@ -56,7 +56,7 @@ function Dashboard() {
         <div className="input">
           <div className="loupe">
           </div>
-          <input type="text" placeholder="Search.." className="formulaire" />
+          <input type="text" placeholder="Search.." className="formulaire_1" />
           <div className="notif">
           </div>
         </div>
@@ -98,22 +98,22 @@ function Dashboard() {
               <button type="button">NFT</button>
               </div>
               <nav className="topline">
-                <div className='titreul'> 
-                  <ul>
-                    <li>Name</li>
-                    <li>Positions</li>
-                    <li>Price</li>
-                    <li>24h</li>
-                    <li>Volume 24h</li>
-                    <li>Marketcap</li>
-                    <li>Supply</li>
-                </ul>
-                </div>
-                <div>
-                  {data.map(token => (
-                    <TickComponent tick={token.tick} />
-                  ))}
-                </div>
+                  <table>
+                  <thead> 
+                  <tr>
+                    <th>Name</th>
+                    <th>Positions</th>
+                    <th>Price</th>
+                    <th>24h</th>
+                    <th>Volume 24h</th>
+                    <th>Marketcap</th>
+                    <th>Supply</th>
+                  </tr>
+                  </thead> 
+                    {data.map(token => (
+                      <TickComponent tick={token.tick} />
+                    ))}
+                </table>
               </nav>
             </div>
           </div>
@@ -123,23 +123,23 @@ function Dashboard() {
             <img src={litoshi} alt="" />
           </div>
           <div className="menu">
-            <div className='menu2'>
-              <button>Dashboard</button>
-              <button>My wallet</button>
-              <button>Analyze</button>
-              <button>Exchange</button>
-              <button>Multicharts</button>
-            </div>
-            <div className='menuv1'>
-              <button className='BRC'>BRC-20</button>
-              <button className='LTC'>LTC-20</button>
-              <button className='DRC'>DRC-20</button>
-            </div>
+              <div className='menu2'>
+                <button>Dashboard</button>
+                <button>My wallet</button>
+                <button>Analyze</button>
+                <button>Exchange</button>
+                <button>Multicharts</button>
+              </div>
+              <div className='menuv1'>
+                <button className='BRC'>BRC-20</button>
+                <button className='LTC'>LTC-20</button>
+                <button className='DRC'>DRC-20</button>
+              </div>
+            <div className="menufooter">
+              <button>Setting</button>
+              <button>Profile</button>
+              <button>Log Out</button>
           </div>
-          <div className="menufooter">
-            <button>Setting</button>
-            <button>Profile</button>
-            <button>Log Out</button>
           </div>
         </div>
         <div className="ellipse">
@@ -172,15 +172,15 @@ function TickComponent({ tick }) {
   }
 
   return (
-    <ul>
-      <li>{tickData.tick.toUpperCase()}</li>
-      <li>Positions</li>
-      <li>Price</li>
-      <li>Change 24h</li>
-      <li>Volume 24h</li>
-      <li>Marketcap</li>
-      <li>{Number(tickData.max_supply).toLocaleString()}</li>
-    </ul>
+    <tr>
+      <td>{tickData.tick.toUpperCase()}</td>
+      <td>Positions</td>
+      <td>Price</td>
+      <td>Change 24h</td>
+      <td>Volume 24h</td>
+      <td>Marketcap</td>
+      <td>{Number(tickData.max_supply).toLocaleString()}</td>
+    </tr>
   );
 }
 

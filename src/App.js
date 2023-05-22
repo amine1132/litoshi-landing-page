@@ -20,20 +20,17 @@ import orange from './img/orange.svg'
 import Group34054 from './img/Group34054.svg'
 import Frame427319940 from './img/Frame427319940.svg'
 import Frame427 from './img/Frame427.svg'
-import './App.css';
 import Group50 from './img/Group50.svg'
 import Roadmap from './img/Roadmap.svg'
 import Frame from './img/Frame.svg'
 import Logo from './img/Logo.svg'
 import DataDisplay from './bandeaudefilant';
-import Dashboard from './Dashboard';
-import { BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Routes, Link, useNavigate } from 'react-router-dom';
 
 
 
 function App() {
   return (
-    <Router>
     <div className='max'>
       <div className='max2'>
         <div className='nav'>
@@ -185,11 +182,7 @@ function App() {
           <p>Made by Litoshi Team @Copyright 2023</p>
         </div>
       </footer>
-      <Routes>
-         <Route path="/" element={<Dashboard />} />
-      </Routes>
     </div>
-    </Router> 
   );
 }
 export default App;
