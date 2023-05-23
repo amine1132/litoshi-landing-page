@@ -5,6 +5,16 @@ import './Dashboard.css';
 import litoshi from './litoshi.svg'
 import cercle from './Cercle.svg'
 import { json } from 'react-router-dom';
+import Vector from './Vector.svg'
+import element3 from './element3.svg'
+import Footer from './Footer.svg'
+import footer2 from './footer2.svg'
+import footer3 from './footer3.svg'
+import globalsearch from './globalsearch.svg'
+import notification from './notification.svg' 
+import ouai from './ouai.svg'
+import search from './search.svg'
+import homme from './homme.svg'
 
 const address = 'bc1p6ed8wca5sjmzvsf92uc2ak2egphj9zw59dghcup2ve95slpvcxlqynsk7j';
 
@@ -12,6 +22,10 @@ function Dashboard() {
   const [data, setData] = useState([]);
   const [overall_balance, setOverallBalance] = useState(0);
   const [available_balance, setAvailableBalance] = useState(0);
+  const [showNFTContent, setShowNFTContent] = useState(false);
+  const [showTokenContent, setShowTokenContent] = useState(false);
+  const [box3Content, setBox3Content] = useState("Initial Content");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -41,6 +55,16 @@ function Dashboard() {
     setAvailableBalance(Number(availableSum));
   };
 
+  const handleNFTButtonClick = () => {
+  setShowNFTContent(true);
+  setBox3Content("Initial Content");
+  };
+
+  const handleTokenButtonClick = () => {
+    setShowNFTContent(false);
+    setShowTokenContent(true);
+    setBox3Content("Default Token Content");
+  };
 
   return (
     <>
@@ -55,8 +79,9 @@ function Dashboard() {
         </div>
         <div className="input">
           <div className="loupe">
+            <img src={search} alt=""/>
           </div>
-          <input type="text" placeholder="Search.." className="formulaire_1" />
+          <input type="text" placeholder="Search" className="formulaire_1" />
           <div className="notif">
           </div>
         </div>
@@ -94,9 +119,34 @@ function Dashboard() {
             <div className="box3">
               <div className='topv1'>
               <p>My Assets</p>
-              <button type="button">Token</button>
-              <button type="button">NFT</button>
+              <button type="button" onClick={handleTokenButtonClick}>Token</button>
+              <button type="button" onClick={handleNFTButtonClick}>NFT</button>
               </div>
+              {showNFTContent ? (
+              <div className='nft'>
+                <div className='box'>
+                  <img src={homme} alt=""/>
+                  <div className='text_8'>
+                    <p className='desc'>#47856</p>
+                    <button type="button" className='buton'>Détails</button>
+                  </div>
+                </div>
+                <div className='box'>
+                  <img src={homme} alt=""/>
+                  <div className='text_8'>
+                    <p className='desc'>#47856</p>
+                    <button type="button" className='buton'>Détails</button>
+                  </div>
+                </div>
+                <div className='box'>
+                  <img src={homme} alt=""/>
+                  <div className='text_8'>
+                    <p className='desc'>#47856</p>
+                    <button type="button" className='buton'>Détails</button>
+                  </div>
+                </div>
+              </div>
+              ) : showTokenContent ? (
               <nav className="topline">
                   <table>
                   <thead> 
@@ -105,9 +155,9 @@ function Dashboard() {
                     <th>Positions</th>
                     <th>Price</th>
                     <th>24h</th>
-                    <th>Volume 24h</th>
+                    <th>Available</th>
+                    <th>Transferable</th>
                     <th>Marketcap</th>
-                    <th>Supply</th>
                   </tr>
                   </thead> 
                     {data.map(token => (
@@ -115,6 +165,9 @@ function Dashboard() {
                     ))}
                 </table>
               </nav>
+                 ) : (
+                  <div>{box3Content}</div>
+                )}
             </div>
           </div>
         </div>
@@ -124,11 +177,11 @@ function Dashboard() {
           </div>
           <div className="menu">
               <div className='menu2'>
-                <button>Dashboard</button>
-                <button>My wallet</button>
-                <button>Analyze</button>
-                <button>Exchange</button>
-                <button>Multicharts</button>
+                <button><img src={Vector} alt=""/>Dashboard</button>
+                <button><img src={globalsearch} alt=""/>Explorer</button>
+                <button><img src={ouai} alt=""/>Watchlist</button>
+                <button><img src={notification} alt=""/>Alerts</button>
+                <button><img src={element3} alt=""/>Multicharts</button>
               </div>
               <div className='menuv1'>
                 <button className='BRC'>BRC-20</button>
@@ -136,9 +189,9 @@ function Dashboard() {
                 <button className='DRC'>DRC-20</button>
               </div>
             <div className="menufooter">
-              <button>Setting</button>
-              <button>Profile</button>
-              <button>Log Out</button>
+              <button><img src={Footer} alt=""/>Setting</button>
+              <button><img src={footer2} alt=""/>Profile</button>
+              <button><img src={footer3} alt=""/>Log Out</button>
           </div>
           </div>
         </div>
@@ -177,8 +230,8 @@ function TickComponent({ tick }) {
       <td>Positions</td>
       <td>Price</td>
       <td>Change 24h</td>
-      <td>Volume 24h</td>
-      <td>Marketcap</td>
+      <td>Available</td>
+      <td>Transferable</td>
       <td>{Number(tickData.max_supply).toLocaleString()}</td>
     </tr>
   );

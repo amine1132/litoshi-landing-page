@@ -204,8 +204,8 @@ justify-content: space-between;
 .menuv1{
 display: flex;
 flex-direction: column;
-align-items: center;
-width: 100%;
+align-items: start;
+width: 80%;
 border: 1px solid transparent;
 margin-bottom: 250px;
 }
@@ -215,25 +215,32 @@ flex-direction: column;
 padding-bottom: 25px;
 border-bottom: 1px solid rgba(86, 58, 255, 0.56);
 width: 80%;
+align-items: flex-start;
 }
 .menu button{
 border: none;
 margin-bottom: 10px;
 padding: 0;
 height: 31px;
+width: 108px;
 background: transparent;
 color: white;
 font-size: 14px;
+align-items: center;
+display: flex;
 }
 .menu i{
 margin-right: 15px;
 }
-
+.menu2 img{
+margin-right: 10px;
+}
 
 .menufooter{
 display: flex;
 flex-direction: column;
 width:100%;
+align-items: center;
 }
 .menufooter button{
 background: rgba(255,255,255,0);
@@ -243,9 +250,13 @@ padding: 0;
 height: 30px;
 color: white;
 }
-
-.menufooter i{
+.menufooter img{
 margin-right: 15px;
+}
+.menufooter button:hover{
+background: rgba(86, 58, 255, 0.2);
+border: 1px solid #563AFF;
+border-radius: 3px;
 }
 .menu2 button:hover{
 background: rgba(86, 58, 255, 0.2);
@@ -346,10 +357,72 @@ margin-left: 32px;
 width:120px;
 }
 .topv1 button{
-width: 59px;
+width: min-content;
 height: 26px;
 background: transparent;
 color: white;
 border: 1px solid rgba(255, 255, 255, 0.3);
 border-radius: 4px;
+margin-right: 8px;
+}
+.topv1 button:hover{
+  background: rgba(86, 58, 255, 0.2);
+  border: 1px solid #563AFF;
+}
+.topv1 p{
+margin-bottom: 20px;
+}
+.nft{
+display: flex;
+flex-wrap: wrap;
+margin-left: 32px;
+}
+.nft img{
+width: 100%;
+border-radius: 6px;
+object-fit: cover;
+
+}
+.nft .box{
+width: 100px;
+height: 100px;
+margin-left: 32px;
+transition: transform 1s ease;
+}
+.nft .box:hover{
+  background: #151516;
+  transform: scale(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 23px;
+  border-radius: 6px;
+}
+.nft .text_8 {
+display: flex;
+flex-direction: row;
+font-size: 10px;
+justify-content: space-around;
+align-items: center;
+}
+.nft .text_8 button{
+background: transparent;
+border: 1px solid transparent;
+color: white;
+font-size: 10px;
+}
+.nft .text_8 button:hover{
+  background: rgba(86, 58, 255, 0.2);
+  border: 1px solid #563AFF;
+  border-radius: 4px;
+}
+
+.desc,.buton{
+display: none;
+}
+
+.box:hover .desc,.box:hover .buton{
+display: block;
+}
+
+.top span{
+color: #563AFF;
 }
